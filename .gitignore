@@ -8,7 +8,6 @@ bin-release/
 .settings/
 
 node_modules/
-api/*.json
 
 # Executables
 *.swf
@@ -20,3 +19,6 @@ api/*.json
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
 config.js
+blogs.json
+mp_token_info.json
+token_info.json

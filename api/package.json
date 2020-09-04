@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "child_process": "^1.0.2",
+    "fast-glob": "^3.1.1",
+    "fs": "0.0.1-security",
+    "koa": "^2.11.0",
+    "koa-log4": "^2.3.2",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "koa-useragent": "^3.0.0",
+    "koa2-cors": "^2.0.6",
+    "mime-types": "^2.1.27",
+    "path": "^0.12.7",
+    "request": "^2.88.2"
+  }
+}
