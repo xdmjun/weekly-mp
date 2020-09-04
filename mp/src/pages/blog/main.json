@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "Parser":"/static/Parser/index",
+    "wemark":"/static/wemark/wemark"
+  }
+}

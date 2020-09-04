@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "科技爱好者周刊",
+  "navigationBarBackgroundColor": "#fff",
+  "usingComponents": {
+    "l-card":"/static/lin/card/index",
+    "l-search-bar": "/static/lin/search-bar/index",
+    "l-icon":"/static/lin/icon/index"
+  }
+}

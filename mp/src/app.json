@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/main",
+    "pages/discover/main",
+    "pages/my/main",
+    "pages/blog/main"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F7F4F7",
+    "navigationBarTitleText": "科技爱好者周刊",
+    "navigationBarTextStyle": "black"
+  },
+  "usingComponents": {
+    "i-tabs": "../static/iview/tabs/index",
+    "i-tab": "../static/iview/tab/index",
+    "i-row": "../static/iview/row/index",
+    "i-col": "../static/iview/col/index",
+    "i-cell-group": "../static/iview/cell-group/index",
+    "i-cell": "../static/iview/cell/index",
+    "i-button": "../static/iview/button/index",
+    "i-icon": "../static/iview/icon/index",
+    "i-modal": "../static/iview/modal/index",
+    "i-action-sheet": "../static/iview/action-sheet/index",
+    "i-card": "../static/iview/card/index",
+    "i-message": "../static/iview/message/index",
+    "i-switch": "../static/iview/switch/index",
+    "i-toast": "../static/iview/toast/index",
+    "i-tag": "../static/iview/tag/index",
+    "i-notice-bar": "../static/iview/notice-bar/index",
+    "i-load-more": "../static/iview/load-more/index",
+    "i-alert": "../static/iview/alert/index"
+  },
+  "tabBar": {
+    "color": "#999",
+    "backgroundColor": "#fafafa",
+    "selectedColor": "#27DE8D",
+    "borderStyle": "white",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/main",
+        "iconPath": "static/tabs/home.png",
+        "selectedIconPath": "static/tabs/home-active.png"
+      },
+      {
+        "text": "关于",
+        "pagePath": "pages/my/main",
+        "iconPath": "static/tabs/my.png",
+        "selectedIconPath": "static/tabs/my-active.png"
+      }
+    ],
+    "position": "bottom"
+  }
+}

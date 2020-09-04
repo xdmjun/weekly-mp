@@ -8,7 +8,7 @@ bin-release/
 .settings/
 
 node_modules/
-*.json
+api/*.json
 
 # Executables
 *.swf
