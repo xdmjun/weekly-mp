@@ -76,7 +76,7 @@ export default {
   onShareTimeline() {
     return {
       title: this.title,
-      path: '/pages/blog/main?name=' + this.name,
+      query: 'name=' + this.name,
       imageUrl: this.imagePath || '',
     }
   },

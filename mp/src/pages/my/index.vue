@@ -2,8 +2,12 @@
   <div class="main">
     <div class="container">
       <div class="userinfo" data-clipboard="userInfo.url" bindtap="clipboard">
-        <image class="userinfo-avatar" :src="userInfo.avatarUrl" background-size="cover" />
-        <text class="userinfo-nickname">{{ userInfo.nickname }}</text>
+        <div class="userinfo-avatar">
+          <open-data type="userAvatarUrl"></open-data>
+        </div>
+        <text class="userinfo-nickname">
+          <open-data type="userNickName"></open-data>
+        </text>
         <div class="desc">{{ userInfo.desc }}</div>
       </div>
     </div>
@@ -23,8 +27,6 @@ export default {
   data() {
     return {
       userInfo: {
-        avatarUrl: 'http://tiaocaoer.com/images/site_icon.png',
-        nickname: '薛定喵君',
         desc: '科技互联网爱好者',
       },
       wxghUrl: '/static/images/qrcode_for_xdmj.jpg',
@@ -118,8 +120,10 @@ page {
         height: 138rpx;
         margin: 20rpx;
         border-radius: 50%;
+        overflow: hidden;
       }
       .userinfo-nickname {
+        margin-top: 3px;
         color: rgba(0, 0, 0, 0.85);
       }
     }
