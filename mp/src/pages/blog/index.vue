@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <i-notice-bar icon="systemprompt" loop>内容可能与Web端科技爱好者周刊略有误差</i-notice-bar>
+    <!-- <i-notice-bar icon="systemprompt" loop>内容可能与Web端科技爱好者周刊略有误差</i-notice-bar> -->
     <official-account></official-account>
     <i-load-more v-if="loading" :loading="loading" />
     <div class="content">

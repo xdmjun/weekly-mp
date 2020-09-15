@@ -10,7 +10,7 @@
       circular="true"
     >
       <div v-for="(item,i) in bannerList" :key="i">
-        <swiper-item @click="jump(item.name)">
+        <swiper-item class="s-item" @click="jump(item.name)">
           <image :src="item.src" lazy-load="true" class="slide-image" mode="aspectFill" />
         </swiper-item>
       </div>
@@ -101,17 +101,32 @@ export default {
               }
               weeklies.push(blog)
             })
+            let random = this.getRandomIndex(weeklies)
             this.bannerList = [
-              { name: '', src: weeklies[this.getRandomIndex(weeklies)].img },
-              { name: '', src: weeklies[this.getRandomIndex(weeklies)].img },
-              { name: '', src: weeklies[this.getRandomIndex(weeklies)].img },
+              {
+                name: weeklies[random[0]].file_name,
+                src: weeklies[random[0]].img,
+              },
+              {
+                name: weeklies[random[1]].file_name,
+                src: weeklies[random[1]].img,
+              },
+              {
+                name: weeklies[random[2]].file_name,
+                src: weeklies[random[2]].img,
+              },
             ]
             this.weeklies = this.weeklies.concat(...weeklies)
           }
         })
     },
     getRandomIndex(weeklies) {
-      return Math.floor(Math.random() * weeklies.length)
+      let randowArr = [
+        Math.floor(Math.random() * weeklies.length),
+        Math.floor(Math.random() * weeklies.length),
+        Math.floor(Math.random() * weeklies.length),
+      ]
+      return randowArr
     },
     toSearch() {
       mpvue.navigateTo({
@@ -191,6 +206,11 @@ page {
         font-size: 18px;
         color: #404040;
         font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
       }
     }
     .experts-list {

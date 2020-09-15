@@ -3,20 +3,24 @@
     <div class="container">
       <div class="userinfo" data-clipboard="userInfo.url" bindtap="clipboard">
         <div class="userinfo-avatar">
-          <open-data type="userAvatarUrl"></open-data>
+          <image class="img" src="http://tiaocaoer.com/images/site_icon.png" mode="aspectFill" />
         </div>
-        <text class="userinfo-nickname">
-          <open-data type="userNickName"></open-data>
-        </text>
+        <text class="userinfo-nickname">科技爱好者周刊</text>
         <div class="desc">{{ userInfo.desc }}</div>
+        <div class="desc">周五发布</div>
       </div>
     </div>
+    <div class="extro">
+      <div class="tip">欢迎投稿，推荐或自荐文章/软件/资源</div>
+      <div class="address">https://github.com/ruanyf/weekly</div>
+    </div>
+
     <!-- <i-cell @click="toDetail" title="关于" is-link>
       <i-icon type="mine" size="24" color="#80848f" slot="icon" />
     </i-cell>-->
-    <i-cell @click="subscribe" :title="subscribed?'已订阅':'订阅更新'" is-link>
+    <!-- <i-cell @click="subscribe" :title="subscribed?'已订阅':'订阅更新'" is-link>
       <i-icon type="like" size="24" color="#80848f" slot="icon" />
-    </i-cell>
+    </i-cell>-->
     <i-toast id="toast" />
   </div>
 </template>
@@ -27,7 +31,7 @@ export default {
   data() {
     return {
       userInfo: {
-        desc: '科技互联网爱好者',
+        desc: '记录每周值得分享的科技内容',
       },
       wxghUrl: '/static/images/qrcode_for_xdmj.jpg',
       subscribed: 0,
@@ -116,14 +120,18 @@ page {
       flex-direction: column;
       align-items: center;
       .userinfo-avatar {
-        width: 138rpx;
-        height: 138rpx;
+        width: 90px;
+        height: 90px;
         margin: 20rpx;
         border-radius: 50%;
         overflow: hidden;
+        .img {
+          width: 100%;
+          height: 100%;
+        }
       }
       .userinfo-nickname {
-        margin-top: 3px;
+        margin: 3px;
         color: rgba(0, 0, 0, 0.85);
       }
     }
@@ -154,6 +162,13 @@ page {
     .wxgh {
       width: 168px;
       height: 168px;
+    }
+  }
+  .extro {
+    text-align: center;
+    .tip {
+      color: #757575;
+      margin-bottom: 5px;
     }
   }
 }
