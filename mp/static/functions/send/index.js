@@ -19,12 +19,13 @@ exports.main = async (event, context) => {
     // 循环消息列表
     const sendPromises = messages.data.map(async message => {
       try {
+        let blogName = message.data.blogname.replace('（', '').replace('）', '').replace('科技爱好者周刊', '')
         // 发送订阅消息
         await cloud.openapi.subscribeMessage.send({
           touser: message.touser,
           page: message.page,
           data: {
-            thing6: { value: message.data.blogname },
+            thing6: { value: blogName },
             date4: { value: message.data.time },
           },
           templateId: message.templateId,

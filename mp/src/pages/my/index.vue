@@ -13,14 +13,21 @@
     <div class="extro">
       <div class="tip">欢迎投稿，推荐或自荐文章/软件/资源</div>
       <div class="address">https://github.com/ruanyf/weekly</div>
+
+      <i-button
+        @click="subscribe"
+        i-class="btn"
+        type="success"
+        inline
+        shape="circle"
+        size="small"
+      >{{subscribed?'已订阅，请等待下次推送后再来订阅吧':'订阅更新'}}</i-button>
     </div>
 
     <!-- <i-cell @click="toDetail" title="关于" is-link>
       <i-icon type="mine" size="24" color="#80848f" slot="icon" />
     </i-cell>-->
-    <!-- <i-cell @click="subscribe" :title="subscribed?'已订阅':'订阅更新'" is-link>
-      <i-icon type="like" size="24" color="#80848f" slot="icon" />
-    </i-cell>-->
+
     <i-toast id="toast" />
   </div>
 </template>
@@ -52,7 +59,7 @@ export default {
       wx.requestSubscribeMessage({
         tmplIds: tmplIds,
         success(res) {
-          if (res['BjmASVGE9Ut9doV7aY75SkqyS6Nenj3XaQ_BbvAXpqdI'] !== 'reject') {
+          if (res['jmASVGE9Ut9doV7aY75SkqyS6Nenj3XaQ_BbvAXpqdI'] !== 'reject') {
             wx.cloud
               .callFunction({
                 name: 'subscribe',
@@ -79,7 +86,18 @@ export default {
       })
     },
   },
-  onShow() {},
+  onShow() {
+    wx.cloud
+      .callFunction({
+        name: 'get_subscribeinfo',
+        data: {
+          templateId: 'jmASVGE9Ut9doV7aY75SkqyS6Nenj3XaQ_BbvAXpqdI',
+        },
+      })
+      .then(res => {
+        this.subscribed = res.result.subscribe
+      })
+  },
   onReachBottom() {},
   onShareAppMessage() {},
   onShareTimeline() {},
@@ -168,6 +186,9 @@ page {
     text-align: center;
     .tip {
       color: #757575;
+      margin-bottom: 5px;
+    }
+    .address {
       margin-bottom: 5px;
     }
   }

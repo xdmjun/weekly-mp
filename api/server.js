@@ -208,7 +208,7 @@ router.get('/weeklies/init', async (ctx, next) => {
 router.get('/tcb/notice', async (ctx, next) => {
   let allblogs = await getTitleFromJson(),
     title = JSON.parse(allblogs)[0].title,
-    time = JSON.parse(allblogs)[0].date
+    time = JSON.parse(allblogs)[0].lastdate
 
   let tokenRs = await new Promise(function (resolve, reject) {
     request(
