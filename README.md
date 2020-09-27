@@ -5,20 +5,20 @@
 
 | 首页 | 详情页 |
 |---|---|
-|<img src="http://cdn.xuedingmiao.com/weekly-home.jpg" style="margin-right:5px;">|<img src="http://cdn.xuedingmiao.com/weekly-detail.jpg">|
+|<img src="http://cdn.xuedingmiao.com/weekly-home.jpg">|<img src="http://cdn.xuedingmiao.com/weekly-detail.jpg">|
 
 #### 与语雀的界面对比
 
 | 语雀中周刊的列表页 | 详情页 |
 |---|---|
-|<img src="http://cdn.xuedingmiao.com/yuque-list.jpg" style="margin-right:5px;">|<img src="http://cdn.xuedingmiao.com/yuque-detail.jpg">|
+|<img src="http://cdn.xuedingmiao.com/yuque-list.jpg">|<img src="http://cdn.xuedingmiao.com/yuque-detail.jpg">|
 
 - 以下是使用方式上的一些差异，仅供参考
 
 | 使用上的差异 | 入口层级 | 分享 | 订阅 |
 |---|---|---|---|
 | 语雀内的 | 层级较深 | 支持分享海报及发送给朋友(右上角胶囊菜单不支持分享给朋友及朋友圈) | 关注后开启推送 |
-| 本小程序 | 点击即用 | 支持右上角胶囊菜单分享给朋友及朋友圈 | 功能已增加，暂未开放 |
+| 本小程序 | 点击即用 | 支持右上角胶囊菜单分享给朋友及朋友圈 | 支持一次性订阅消息获取更新 |
 
 
 ### 技术选型
@@ -34,6 +34,8 @@
 - 小程序云开发部署若干云函数
     - weeklies：获取周刊列表
     - weekly：获取周刊 markdown 数据
+    - subscribe：周刊订阅
+    - send：订阅消息发送
 - 服务器部署基于 koa 框架开发的接口
 
 ### 架构方案
