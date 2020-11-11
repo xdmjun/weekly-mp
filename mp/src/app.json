@@ -3,7 +3,8 @@
     "pages/index/main",
     "pages/discover/main",
     "pages/my/main",
-    "pages/blog/main"
+    "pages/blog/main",
+    "pages/preview/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
