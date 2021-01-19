@@ -3,6 +3,7 @@
   "navigationBarBackgroundColor": "#fff",
   "usingComponents": {
     "Parser":"/static/Parser/index",
-    "wemark":"/static/wemark/wemark"
+    "wemark":"/static/wemark/wemark",
+    "wxcomment": "/static/WxComment/component/WxComment/WxComment"
   }
 }

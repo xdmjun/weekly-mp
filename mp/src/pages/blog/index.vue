@@ -5,6 +5,7 @@
     <i-load-more v-if="loading" :loading="loading" />
     <div class="content">
       <wemark :md="content" link highlight type="wemark"></wemark>
+      <Wxcomment tipOne="Markdown " tipTwo="will be supported" submitBtnText="回复" :articleID="name" contentLen='1'></wxcomment>
     </div>
   </div>
 </template>
