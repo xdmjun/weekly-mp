@@ -378,15 +378,15 @@ async function getContent(name) {
   var data = fs.readFileSync(config.base_path + name, 'utf-8')
   let blogCont = {}
   blogCont.title = data.substring(data.indexOf('#'), data.indexOf('\n'))
-  let linkReg = /((ht|f)tps?:)\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g //匹配链接
+  // let linkReg = /((ht|f)tps?:)\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/g //匹配链接
   let cnt = data
-  let linkArr = cnt.match(linkReg) //筛选出所有的链接
-  linkArr.map((l) => {
-    // 非图片时追加预览页面路径前缀
-    if (!l.endsWith('.jpg') && !l.endsWith('.png') && !l.endsWith('.jpeg')) {
-      cnt = cnt.replace(l, '/pages/preview/main?url=' + l)
-    }
-  })
+  // let linkArr = cnt.match(linkReg) //筛选出所有的链接
+  // linkArr.map((l) => {
+  //   // 非图片时追加预览页面路径前缀
+  //   if (!l.endsWith('.jpg') && !l.endsWith('.png') && !l.endsWith('.jpeg')) {
+  //     cnt = cnt.replace(l, '/pages/preview/main?url=' + l)
+  //   }
+  // })
   blogCont.content = cnt
   return blogCont
 }
